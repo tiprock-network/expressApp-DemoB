@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/dropbox.png" type="image/x-icon">
+    <title>Open Drop</title>
+    <script src="https://kit.fontawesome.com/912e452282.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <nav>
+        <ul class="list">
+            <li><i class="fa fa-home"></i> Home</li>
+            <li><i class="fa fa-comments"></i> Spaces</li>
+            <li><i class="fa fa-newspaper"></i> Blog</li>
+            <li><i class="fa fa-award"></i> Competitions</li>
+        </ul>
+    </nav>
+    
+    
+
+    <div class="container1">
+        <div class="container2" id="c2">
+            <!--Message appears here after creation-->
+        </div>
+        <img src="/images/dropbox.png" alt="">
+        <h1>Open Drop</h1>
+        <p>Start your open source journey in tech</p>
+        <br>
+        <i class="fa fa-pen-to-square"></i>
+        <i>Project Name</i>
+        <input type="text" name="projname" id="projname" autofocus spellcheck="false">
+        <br>
+        <button onclick="getNameValue()" class="open-btn" id="opBtn" >Open New Project</button>
+    </div>
+
+    
+
+    
+
+<script>
+   // const openButton=document.getElementById('optBtn')
+    let projNameVar=document.getElementById('projname')
+    let disp=document.getElementById('c2')
+    var time=new Date()
+    var randNum=Math.round(Math.random()*(1500-100)+100)
+    function getNameValue(){
+        let text= projNameVar.value
+        disp.style.display="block"
+        disp.innerHTML=` 
+        <i class="fa fa-pen-ruler"></i>
+        <h1><u>${text}</u></h1>
+        <p>ID: ${randNum*2}MprojXL${randNum*6} </p>
+        <br>
+        <br>
+        <p>Created at: </p>
+        <br>
+        <p>${time.getHours()}:${time.getMinutes()+1}:${time.getSeconds()} 
+        ${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}</p>
+        `
+    }
+</script>
+
+</body>
+</html>
